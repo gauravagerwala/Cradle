@@ -1,0 +1,111 @@
+﻿<Page
+    x:Class="Cradle_Monitor.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Cradle_Monitor"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <ScrollViewer Margin="0,0,0,-1024" Height="580" VerticalAlignment="Top" 
+  VerticalScrollBarVisibility="Visible" VerticalScrollMode="Enabled"
+  AllowDrop="False" BringIntoViewOnFocusChange="True"
+  HorizontalScrollMode="Disabled" IsHoldingEnabled="True" >
+
+
+        <Grid x:Name="LayoutRoot">
+
+
+            <Grid.ChildrenTransitions>
+                <TransitionCollection>
+                    <EntranceThemeTransition/>
+                </TransitionCollection>
+            </Grid.ChildrenTransitions>
+            <ScrollViewer Margin="-10,0,10,0">
+
+                <Grid x:Name="settingsPageGrid"  Height="640" Width="400">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Title Panel -->
+                    <StackPanel Grid.Row="0" 
+				Margin="19,0,0,0">
+                        <TextBlock Text="CRADLE" 
+					Style="{ThemeResource TitleTextBlockStyle}" 
+					Margin="0,12,0,0"
+					FontSize="20"
+					FontFamily="Calibri"
+					Foreground="#6284c4"/>
+
+                        <TextBlock Text="Settings" 
+					Margin="0,-6.5,-0.167,26.5" 
+					Style="{ThemeResource HeaderTextBlockStyle}" 
+					CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"
+					FontFamily="Calibri"
+					FontSize="55"
+                        
+					Foreground="#6284c4" Height="88"/>
+
+                    </StackPanel>
+
+                    <!--TODO: Content should be placed within the following grid-->
+                    <Grid x:Name="ContentRoot" Margin="19,135,0,10" Grid.RowSpan="2">
+                        <Grid.Resources>
+                            <Flyout x:Key="settingsFlyout">
+                                <Grid Height="100" Width="100" AllowDrop="True" />
+                            </Flyout>
+                        </Grid.Resources>
+                        <FlyoutBase.AttachedFlyout>
+                            <StaticResource ResourceKey="settingsFlyout"/>
+                        </FlyoutBase.AttachedFlyout>
+
+
+
+                        <Button x:Name="changeBabyNameButton" 
+					Content="Change details" 
+					HorizontalAlignment="Left" 
+					Margin="10,0,0,0" 
+					VerticalAlignment="Top" 
+					Width="352" 
+					Height="83"
+					Click="changeBabyNameButton_click"
+                    Background="Black"
+                                Foreground="#6284c4"
+                                BorderBrush="#6284c4"/>
+
+                        <TextBlock x:Name="aboutTextBlock" 
+					HorizontalAlignment="Left" 
+					Margin="0,111,0,0"
+					TextWrapping="Wrap" 
+					Text="About"
+					FontFamily="Calibri"
+					FontSize="55"
+                    Style="{ThemeResource HeaderTextBlockStyle}" 
+					CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"
+					VerticalAlignment="Top" 
+					Height="60" 
+					Width="371"
+					Foreground="#6284c4"/>
+
+                        <TextBlock x:Name="contentTextBlock" 
+                       HorizontalAlignment="Left" 
+                       Margin="0,176,0,0" 
+                       TextWrapping="Wrap" 
+                       Text="Cradle is a baby monitor that monitors your baby's breathing, temperature and sleeping position. It helps keep your baby safe by sending alerts through notifications to an app on your windows phone. Cradle also comprises of a hardware unit embedded into a belt which is to be attached to the baby's waist." 
+                       VerticalAlignment="Top" 
+                       Height="240" 
+                       Width="362"
+                       FontFamily="calibri"
+                       FontSize="20"
+                                   Foreground="Gray"/>
+
+                    </Grid>
+                </Grid>
+            </ScrollViewer>
+
+
+        </Grid>
+    </ScrollViewer>
+</Page>

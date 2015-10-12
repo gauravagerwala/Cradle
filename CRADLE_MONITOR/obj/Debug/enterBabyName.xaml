@@ -1,0 +1,221 @@
+﻿<Page
+    x:Class="Cradle_Monitor.enterBabyName"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Cradle_Monitor"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:ConnectionId='1' Icon="Setting" 
+                          Label="Settings"
+                                                />
+        </CommandBar>
+    </Page.BottomAppBar>
+    <ScrollViewer Margin="0,0,0,-1024" Height="580" VerticalAlignment="Top" 
+  VerticalScrollBarVisibility="Visible" VerticalScrollMode="Enabled"
+  AllowDrop="False" BringIntoViewOnFocusChange="True"
+  HorizontalScrollMode="Disabled" IsHoldingEnabled="True" >
+        <Grid x:Name="LayoutRoot" >
+
+
+            <Grid.ChildrenTransitions>
+                <TransitionCollection>
+                    <EntranceThemeTransition/>
+                </TransitionCollection>
+            </Grid.ChildrenTransitions>
+
+            <Grid x:Name="BabyName" Margin="0,10,0,268">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Title Panel -->
+                <StackPanel Grid.Row="0" 
+                    Margin="19,0,0,9.833">
+                    <TextBlock Text="CRADLE" 
+                       Style="{ThemeResource TitleTextBlockStyle}" 
+                       Margin="0,12,0,0"
+                       FontSize="20"
+                       FontFamily="Calibri"
+                       Foreground="#6284c4"/>
+
+                    <TextBlock Text="DETAILS" 
+                       Margin="0,-6.5,9.833,26.5" 
+                       Style="{ThemeResource HeaderTextBlockStyle}" 
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"
+                       FontFamily="Calibri"
+                       FontSize="55"
+                       Foreground="#6284c4" Height="67"/>
+
+                </StackPanel>
+
+                <!--TODO: Content should be placed within the following grid-->
+                <Grid x:Name="ContentRoot" Margin="19,9.5,19,87.333" Grid.Row="1">
+                    <TextBlock HorizontalAlignment="Left" 
+                       Margin="43,113,0,0" 
+                       TextWrapping="Wrap" 
+                       Text="Enter Baby's Name" 
+                       VerticalAlignment="Top" 
+                       Height="41" 
+                       Width="264"
+                       FontFamily="Calibri"
+                       FontSize="30"
+                       TextAlignment="Left"
+                       Foreground="#6284c4"/>
+
+                    <TextBox x:ConnectionId='2' x:Name="enterBabyNameTextBox1" 
+                     HorizontalAlignment="Left" 
+                     Margin="50,147,0,0" 
+                     TextWrapping="Wrap" 
+                     Text="Enter name here"
+                     TextAlignment="Center"
+                     VerticalAlignment="Top" 
+                     Height="23" 
+                     Width="257"
+                                                              
+                                                                        
+                             Background="Black"
+                             Foreground="Gray"
+                             BorderBrush="Gray"
+                             />
+
+                    <TextBlock  HorizontalAlignment="Left" 
+                        Margin="50,230,0,0" 
+                        TextWrapping="Wrap" 
+                        Text="Enter Baby's Weight" 
+                        VerticalAlignment="Top" 
+                        Height="48" 
+                        Width="264"
+                        FontFamily="Calibri"
+                        FontSize="27"
+                        TextAlignment="Left"
+                         Foreground="#6284c4"/>
+
+                    <TextBox x:ConnectionId='3' x:Name="enterBabyNameTextBox2" 
+                     HorizontalAlignment="Left" 
+                     Margin="50,266,0,0" 
+                     TextWrapping="Wrap" 
+                     Text="Enter weight here(in kgs)"
+                     TextAlignment="Center"
+                     VerticalAlignment="Top" 
+                     Height="23" 
+                     Width="257"
+                     InputScope="Number"
+                                                              
+                                                                        
+                             Background="Black"
+                             Foreground="Gray"
+                             BorderBrush="Gray"/>
+
+                    <Button x:ConnectionId='4' x:Name="mainPageButton"
+                     Margin="10,657,0,-162" 
+                     Width="342" 
+                     Height="79"
+                     Content="Submit"
+                     FontSize="25"
+                                                      
+                     Foreground="#6284c4"
+                            BorderBrush="#6284c4"
+                            FontFamily="Calibri"/>
+
+                    <TextBlock x:Name="textBlock" 
+                       HorizontalAlignment="Left" 
+                       Margin="50,0,0,0" 
+                       TextWrapping="Wrap" 
+                       Text="Enter Product ID" 
+                       VerticalAlignment="Top" 
+                       RenderTransformOrigin="0.5,0.5" 
+                       Height="51" 
+                       Width="242"
+                       FontFamily="Calibri"
+                       FontSize="28"
+                       TextAlignment="Left"
+                       Foreground="#6284c4"/>
+
+                    <TextBox x:ConnectionId='5' x:Name="enterBabyNameTextBox3" 
+            		TextWrapping="Wrap" 
+            		Text="Enter ID here"
+            		TextAlignment="Center"
+            		                                          
+                    Height="34" 
+                    Margin="50,31,55,0"
+                                                                        
+                            Background="Black"
+                             Foreground="Gray"
+                             BorderBrush="Gray"/>
+
+                    <TextBlock x:Name="genderTextBlock" 
+                           HorizontalAlignment="Left" 
+                           Margin="50,520,0,0" 
+                           TextWrapping="Wrap" 
+                           Text="Your baby is a" 
+                           VerticalAlignment="Top" 
+                           Height="36" 
+                           Width="242"
+                           FontFamily="Calibri"
+                           FontSize="27"
+                           TextAlignment="Left"
+                           Foreground="#6284c4"/>
+
+                    <RadioButton x:ConnectionId='6' x:Name="genderCheckBox1" 
+                             Content="Boy" 
+                             HorizontalAlignment="Left" 
+                             Margin="50,545,0,-29"
+                             VerticalAlignment="Top"
+                                                          
+                             GroupName="gender"
+                                                              
+                                 Foreground="Gray"
+                                 BorderBrush="Gray"
+                             />
+
+                    <RadioButton x:ConnectionId='7' x:Name="genderCheckBox2" 
+                             Content="Girl" 
+                             HorizontalAlignment="Left" 
+                             Margin="184,545,0,-28" 
+                             VerticalAlignment="Top"
+                             GroupName="gender"
+                                                              
+                                 Foreground="Gray"
+                                 BorderBrush="Gray"/>
+                    <TextBlock x:Name="textBlock1" 
+                               HorizontalAlignment="Left" 
+                               Margin="50,358,0,0" 
+                               TextWrapping="Wrap" 
+                               Text="Enter contact number" 
+                               VerticalAlignment="Top" 
+                               Height="51" 
+                               Width="242"
+                               FontSize="27"
+                               FontFamily="Calibri"
+                               Foreground="#6284c4"
+                               />
+                    <TextBox x:ConnectionId='8' x:Name="textBox1" 
+                            HorizontalAlignment="Left"
+                             TextAlignment="Center"
+                             Margin="50,409,0,0" 
+                             TextWrapping="Wrap" 
+                             Text="Enter your number" 
+                             VerticalAlignment="Top" 
+                             Width="257" 
+                             Height="39"
+                             Foreground="Gray"
+                             Background="Black"
+                             BorderBrush="Gray"
+                                                               
+                             InputScope="Number"/>
+
+                </Grid>
+            </Grid>
+
+
+        </Grid>
+    </ScrollViewer>
+</Page>
+

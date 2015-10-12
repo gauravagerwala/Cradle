@@ -1,0 +1,242 @@
+﻿<Page
+    x:Class="Cradle_Monitor.Monitor"
+    xmlns:Charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Cradle_Monitor"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Icon="Setting" 
+                          Label="Settings"
+                          Click="Settings_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <ScrollViewer Margin="0,0.333,0,0" Height="577" VerticalAlignment="Top" 
+  VerticalScrollBarVisibility="Visible" VerticalScrollMode="Enabled"
+  AllowDrop="False" BringIntoViewOnFocusChange="True"
+  HorizontalScrollMode="Disabled" IsHoldingEnabled="True" >
+
+        <Grid x:Name="LayoutRoot"  Height="580" Margin="0,0,0,0">
+
+
+
+            <Grid.ChildrenTransitions>
+                <TransitionCollection>
+                    <EntranceThemeTransition/>
+                </TransitionCollection>
+            </Grid.ChildrenTransitions>
+
+
+
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Title Panel -->
+            <StackPanel Grid.Row="0" 
+				Margin="0,0,0,0">
+
+                <TextBlock Text="CRADLE" 
+					Style="{ThemeResource TitleTextBlockStyle}" 
+					Margin="10,0,0,0"
+					FontSize="20"
+					FontFamily="Calibri" 
+					Height="18"
+					Foreground="#6284c4"/>
+
+                <TextBlock x:Name="BabyNameBlock" 
+					Margin="10,0,0,26.5" 
+					Style="{ThemeResource HeaderTextBlockStyle}" 
+					CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"
+					FontFamily="Calibri"
+					FontSize="55" Height="82"
+                           Foreground="#6284c4"/>
+
+            </StackPanel>
+
+            <TextBlock x:Name="sleepingPositionTextBlock" 
+				HorizontalAlignment="Left"
+				Margin="10,50,0,0" 
+				Grid.Row="1" 
+				TextWrapping="Wrap"
+				VerticalAlignment="Top" 
+				Height="51" 
+				Width="390"
+				FontFamily="Calibri"
+				FontSize="35"
+				TextAlignment="Left"
+                      />
+
+
+
+
+
+            <TextBlock x:Name="monitorTextBlock1" 
+				HorizontalAlignment="Left" 
+				Margin="10,10.167,0,0" 
+				Grid.Row="1" 
+				TextWrapping="Wrap"  
+				VerticalAlignment="Top" 
+				Height="40" 
+				Width="208"
+				FontFamily="Calibri"
+				FontSize="25"
+				TextAlignment="Left"
+                 Foreground="#6284c4"/>
+
+            <TextBlock x:Name="temperatureTextBlock" 
+				HorizontalAlignment="Left" 
+				Margin="0,141.333,0,0" 
+				Grid.Row="1" 
+				TextWrapping="Wrap" 
+				
+				VerticalAlignment="Top" 
+				Height="33" 
+				Width="208"
+				FontFamily="Calibri"
+				FontSize="22"
+				TextAlignment="Center"
+                Foreground="#6284c4"/>
+
+            <TextBlock x:Name="temperatureValueTextBlock" 
+				HorizontalAlignment="Left" 
+				Margin="202,139.333,0,0" 
+				Grid.Row="1" 
+				TextWrapping="Wrap" 
+				
+				VerticalAlignment="Top" 
+				Height="33" 
+				Width="188"
+				FontFamily="Calibri"
+                Foreground="#6284c4"
+				FontSize="25"
+				TextAlignment="Center"/>
+
+            <TextBlock x:Name="temperatureCommentTextBlock" 
+				HorizontalAlignment="Left" 
+				Margin="0,191.333,0,0" 
+				Grid.Row="1" 
+				TextWrapping="Wrap"
+                       FontSize="35"
+			
+				VerticalAlignment="Top" 
+				Height="38" 
+				Width="390"
+				FontFamily="Calibri"
+			
+				TextAlignment="Center"
+				/>
+            <ProgressRing x:Name="MyProgressRing"
+                          HorizontalAlignment="Left"
+                          Margin="160,119.5,0,0"
+                          VerticalAlignment="Top"
+                          Height="76"
+                          Width="76" Grid.Row="1" />
+
+
+
+            <!--<TextBlock x:Name="temperatureTextBlock2" 
+				HorizontalAlignment="Left" 
+				Margin="0,220,0,0" 
+				Grid.Row="1" 
+				TextWrapping="Wrap" 
+				Text="Room Temperature    :"
+				VerticalAlignment="Top" 
+				Height="33" 
+				Width="208"
+				FontFamily="Calibri"
+				FontSize="22"
+				TextAlignment="Center"
+                Foreground="RoyalBlue"/>
+
+            <TextBlock x:Name="temperatureValueTextBlock2" 
+				HorizontalAlignment="Left" 
+				Margin="202,220,0,0" 
+				Grid.Row="1" 
+				TextWrapping="Wrap" 
+				Text="37 Deg Celsius" 
+				VerticalAlignment="Top" 
+				Height="33" 
+				Width="188"
+				FontFamily="Segoe UI Light"
+				FontSize="25"
+				TextAlignment="Center"
+                Foreground="RoyalBlue"/>
+
+            <TextBlock x:Name="temperatureCommentTextBlock2" 
+				HorizontalAlignment="Left" 
+				Margin="0,260,0,0" 
+				Grid.Row="1" 
+				TextWrapping="Wrap" 
+				
+				VerticalAlignment="Top" 
+				Height="38" 
+				Width="390"
+				FontFamily="Segoe UI Light"
+				FontSize="30"
+				TextAlignment="Center"
+				/>-->
+
+
+            <!--<Button x:Name="breathingButton"  
+                    HorizontalAlignment="Left" 
+                    Margin="0,368,0,0" 
+                    Grid.Row="1" 
+                    VerticalAlignment="Top" 
+                    Width="390" 
+                    Height="70"
+                    Click="breathingButton_Click"
+                    Background="Teal"/>-->
+
+            <TextBlock x:Name="breathingHeaderTextBlock" 
+				HorizontalAlignment="Left" 
+				Margin="10,275.333,0,0" 
+				Grid.Row="1" 
+				TextWrapping="Wrap" 
+				VerticalAlignment="Top" 
+				Height="78" 
+				Width="380"
+				FontFamily="Calibri"
+				FontSize="35"
+                TextAlignment="Left"/>
+            <!--<ListView Name="ListItems" Margin="62,10,0,0" Grid.Row="1">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Name="NameTextBox" Text="{Binding x}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+            <!--<TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="35,242,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Height="63" Width="330"/>-->
+
+            <!--<Charting:Chart x:Name="LineChart" 
+				HorizontalAlignment="Left"
+				Grid.Row="1"
+				VerticalAlignment="Top" 
+				Margin="10,254,0,0" 
+				Width="380" 
+				Height="140">
+
+                    <Charting:LineSeries 
+					Title="Baby breathng pattern" 
+					Margin="0" 
+					IndependentValuePath="Time"
+					DependentValuePath="Amount" 
+					IsSelectionEnabled="True"/>-->
+
+            <!--</Charting:Chart>-->
+
+        </Grid>
+
+    </ScrollViewer>
+</Page>
